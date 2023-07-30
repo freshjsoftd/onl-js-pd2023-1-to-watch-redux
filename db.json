@@ -1,0 +1,101 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "watch": [
+    {
+      "title": "Indiana Johns",
+      "director": "Stiven Spilberg",
+      "id": 1,
+      "isDone": true
+    },
+    {
+      "title": "Lord of the rings",
+      "director": "Peter Jackson",
+      "isDone": true,
+      "id": 1655206999251
+    },
+    {
+      "title": "Назад в будущее",
+      "director": "Роберт Земекис",
+      "isDone": false,
+      "id": 1655209153491
+    },
+    {
+      "title": "Чужие",
+      "director": "Ридли Скотт",
+      "isDone": false,
+      "id": 1655562907749
+    },
+    {
+      "title": "Аватар",
+      "director": "Питер Джексон",
+      "isDone": true,
+      "id": 1655562907750
+    },
+    {
+      "title": "Игра Престолов",
+      "director": "Дэвид Бениофф",
+      "isDone": false,
+      "id": 1655562907751
+    }
+  ],
+  "contacts": [
+    {
+      "firstName": "Ken",
+      "lastName": "Hensly",
+      "email": "ken@hensly.com",
+      "phone": "+040(27)325-4583",
+      "id": 1655139846400
+    },
+    {
+      "firstName": "Mick",
+      "lastName": "Box",
+      "email": "mick@box.com",
+      "phone": "+040(27)325-4585",
+      "id": 1655140068073
+    },
+    {
+      "firstName": "Harry",
+      "lastName": "Taine",
+      "email": "harry@taine.com",
+      "phone": "+044(25)325-4587",
+      "id": 1655140306196
+    },
+    {
+      "firstName": "David",
+      "lastName": "Byron",
+      "email": "david@byron.com",
+      "phone": "+040(27)325-4585",
+      "id": 1655140367535
+    },
+    {
+      "firstName": "Lee",
+      "lastName": "Kerslake",
+      "email": "lee@kerslake.com",
+      "phone": "+044(25)325-4587",
+      "id": 1655146249071
+    },
+    {
+      "firstName": "Vasya",
+      "lastName": "Pupkin",
+      "email": "",
+      "phone": "",
+      "id": 1655191271081
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
