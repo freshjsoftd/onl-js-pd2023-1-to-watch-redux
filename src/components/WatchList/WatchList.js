@@ -1,10 +1,12 @@
 import React from 'react';
-import { connect } from 'react-redux'
+import { useSelector } from 'react-redux'
 // import PropTypes from 'prop-types';
 import WatchItem from '../WatchItem/WatchItem';
-import { deleteMovie, toggleMovie } from '../../store/actions/actions';
 
-function WatchList({ movies, deleteMovie, toggleMovie }) {
+
+function WatchList() {
+	
+	const {movies} = useSelector((store) => store);
 	return (
 		<div>
 			{movies.map((movie) => {
@@ -12,8 +14,6 @@ function WatchList({ movies, deleteMovie, toggleMovie }) {
 					<WatchItem
 						key={movie.id}
 						movie={movie}
-						onDelete={deleteMovie}
-						onToggle={toggleMovie}
 					/>
 				);
 			})}
@@ -26,11 +26,6 @@ function WatchList({ movies, deleteMovie, toggleMovie }) {
 	onToggle: PropTypes.func
 }; */
 
-const mapStateToProps = ({movies}) => ({movies})
 
-const mapDispatchToProps = {
-	deleteMovie,
-	toggleMovie,
-};
 
-export default connect(mapStateToProps, mapDispatchToProps)(WatchList)
+export default WatchList

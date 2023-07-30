@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import { deleteMovie, toggleMovie } from '../../store/actions/actions';
 import './WatchItem.css';
 
 const stylesWatchItem = {
@@ -13,7 +15,9 @@ function toggleBackground(movie) {
 	};
 }
 
-function WatchItem({ movie, onToggle, onDelete }) {
+function WatchItem({ movie}) {
+
+	const dispatch = useDispatch();
 	useEffect(() => {
 		// console.log(`Hello ${movie.director}`);
 		return () => {
@@ -22,13 +26,13 @@ function WatchItem({ movie, onToggle, onDelete }) {
 	}, [movie.director, movie.title]);
 	function onMovieDelete(e) {
 		e.stopPropagation();
-		onDelete(movie.id);
+		dispatch(deleteMovie(movie.id));
 	}
 	return (
 		<div
 			className='watch-item'
 			style={toggleBackground(movie)}
-			onClick={() => onToggle(movie.id)}
+			onClick={() => dispatch(toggleMovie(movie.id))}
 		>
 			<p className='content'>
 				{movie.title} produced by {movie.director}
