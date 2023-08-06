@@ -9,8 +9,11 @@ import WatchItem from '../WatchItem/WatchItem';
 
 function WatchList() {
 
-	const {movies} = useSelector((store) => store);
-	const dispatch = useDispatch()
+	const movies = useSelector((store) => store.moviesList.movies);
+	// const contacts = useSelector((store) => store.contactsList.contacts);
+	const dispatch = useDispatch();
+
+	// console.log(contacts);
 
 
 	useEffect(() => {

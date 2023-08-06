@@ -30,6 +30,8 @@ function WatchForm() {
 		api.post('/', movie)
 			.then(({ data }) => dispatch(addMovie(data)))
 			.catch(({ status }) => console.log(status));
+			setTitle('');
+			setDirector('');
   }
 
 	return (
