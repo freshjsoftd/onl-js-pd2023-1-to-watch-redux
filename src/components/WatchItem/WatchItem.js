@@ -1,9 +1,11 @@
-import React/* , { useEffect } */ from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { deleteMovie, toggleMovie } from '../../store/actions/actions';
-import api from '../../api/movie-service';
+import {
+	deleteMovieAction,
+	toggleMovieAction,
+} from '../../store/actions/actions';
 import './WatchItem.css';
 
 const stylesWatchItem = {
@@ -22,17 +24,12 @@ function WatchItem({ movie }) {
 	const dispatch = useDispatch();
 	function onMovieDelete(e) {
 		e.stopPropagation();
-		api.delete(`/${movie.id}`).then(({ statusText }) =>
-			console.log(statusText)
-		);
-		dispatch(deleteMovie(movie.id));
+		dispatch(deleteMovieAction(movie.id));
 	}
 
 	function onToggle(e){
 		e.stopPropagation();
-		api.put(`/${movie.id}`, movie)
-			.then(({ data }) => dispatch(toggleMovie(data.id)))
-			.catch(({ status }) => console.log(status));
+		dispatch(toggleMovieAction(movie));
 	}
 	return (
 		<div
@@ -56,7 +53,5 @@ WatchItem.propTypes = {
 WatchItem.defaultProps = {
 	movie: {},
 }
-
-
 
 export default WatchItem;

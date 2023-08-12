@@ -1,10 +1,7 @@
 import React,  { useState} from 'react';
 import { useDispatch } from 'react-redux'
 
-import { addMovie } from '../../store/actions/actions';
-import api from '../../api/movie-service';
-
-// import PropTypes from 'prop-types';
+import { addMovieAction } from '../../store/actions/actions';
 
 import './WatchForm.css'
 
@@ -27,11 +24,7 @@ function WatchForm() {
 			director, 
 			isDone: false
 		}
-		api.post('/', movie)
-			.then(({ data }) => dispatch(addMovie(data)))
-			.catch(({ status }) => console.log(status));
-			setTitle('');
-			setDirector('');
+		dispatch(addMovieAction(movie));
   }
 
 	return (
@@ -52,10 +45,6 @@ function WatchForm() {
 		</form>
 	);
 }
-
-/* WatchForm.propTypes = {
-	onSubmit: PropTypes.func.isRequired
-}; */
 
 export default WatchForm;
 
