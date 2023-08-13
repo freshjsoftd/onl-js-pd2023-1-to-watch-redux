@@ -1,9 +1,8 @@
-import React/* , { useEffect } */ from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { removeMovie, changeMovie } from '../../store/slices/toWatchSlice'
-import api from '../../api/movie-service';
+import { delMovie, toogleMovie } from '../../store/slices/toWatchSlice'
 import './WatchItem.css';
 
 const stylesWatchItem = {
@@ -22,17 +21,14 @@ function WatchItem({ movie }) {
 	const dispatch = useDispatch();
 	function onMovieDelete(e) {
 		e.stopPropagation();
-		api.delete(`/${movie.id}`).then(({ statusText }) =>
-			console.log(statusText)
-		);
-		dispatch(removeMovie(movie.id));
+		dispatch(delMovie(movie.id));
 	}
 
 	function onToggle(e){
 		e.stopPropagation();
-		api.put(`/${movie.id}`, movie)
-			.then(({ data }) => dispatch(changeMovie(data.id)))
-			.catch(({ status }) => console.log(status));
+		
+		 dispatch(toogleMovie(movie.id));
+			
 	}
 	return (
 		<div

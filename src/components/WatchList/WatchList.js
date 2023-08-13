@@ -1,9 +1,7 @@
 import React, {useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import PropTypes from 'prop-types';
 
-import api from '../../api/movie-service';
-// import { getMovies } from '../../store/actions/actions';
+import { getMovies } from '../../store/slices/toWatchSlice';
 import WatchItem from '../WatchItem/WatchItem';
 
 
@@ -16,11 +14,9 @@ function WatchList() {
 	// console.log(contacts);
 
 
-	/* useEffect(() => {
-		api.get('/')
-			.then(({ data }) => dispatch(getMovies(data)))
-			.catch(({ status }) => console.log(status));
-	}, [dispatch]); */
+	useEffect(() => {
+		dispatch(getMovies());
+	}, [dispatch]);
 	
 	return (
 		<div>
@@ -35,12 +31,6 @@ function WatchList() {
 		</div>
 	);
 }
-
-/* WatchList.propTypes = {
-	movies: PropTypes.array.isRequired,
-	onToggle: PropTypes.func
-}; */
-
 
 
 export default WatchList

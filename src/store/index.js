@@ -8,4 +8,6 @@ export default configureStore({
 	reducer: {
 		moviesList: toWatchReducer,
 	},
+	middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+  devTools: true,
 });

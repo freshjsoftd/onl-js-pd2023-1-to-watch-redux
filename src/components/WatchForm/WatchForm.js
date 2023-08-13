@@ -4,8 +4,6 @@ import { useDispatch } from 'react-redux'
 import { createMovie } from '../../store/slices/toWatchSlice';
 import api from '../../api/movie-service';
 
-// import PropTypes from 'prop-types';
-
 import './WatchForm.css'
 
 function WatchForm() {
@@ -52,10 +50,6 @@ function WatchForm() {
 		</form>
 	);
 }
-
-/* WatchForm.propTypes = {
-	onSubmit: PropTypes.func.isRequired
-}; */
 
 export default WatchForm;
 

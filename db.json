@@ -23,13 +23,13 @@
     {
       "title": "Назад в будущее",
       "director": "Роберт Земекис",
-      "isDone": false,
+      "isDone": true,
       "id": 1655209153491
     },
     {
       "title": "Чужие",
       "director": "Ридли Скотт",
-      "isDone": false,
+      "isDone": true,
       "id": 1655562907749
     },
     {
@@ -41,7 +41,7 @@
     {
       "title": "Игра Престолов",
       "director": "Дэвид Бениофф",
-      "isDone": false,
+      "isDone": true,
       "id": 1655562907751
     },
     {
@@ -53,18 +53,18 @@
     {
       "title": "sfdsfd",
       "director": "Ридли Скотт",
-      "isDone": false,
+      "isDone": true,
       "id": 1655562907753
     },
     {
-      "title": "sds",
-      "director": "Ридли Скотт",
+      "title": "asdsd",
+      "director": "Леонид Гайдай",
       "isDone": false,
       "id": 1655562907754
     },
     {
-      "title": "tdg",
-      "director": "Френсис Форд Коппола",
+      "title": "dsads",
+      "director": "Peter Jackson",
       "isDone": false,
       "id": 1655562907755
     }
