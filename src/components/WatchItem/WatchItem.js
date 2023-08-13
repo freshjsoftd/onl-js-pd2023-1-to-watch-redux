@@ -2,7 +2,7 @@ import React/* , { useEffect } */ from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { deleteMovie, toggleMovie } from '../../store/actions/actions';
+import { removeMovie, changeMovie } from '../../store/slices/toWatchSlice'
 import api from '../../api/movie-service';
 import './WatchItem.css';
 
@@ -25,13 +25,13 @@ function WatchItem({ movie }) {
 		api.delete(`/${movie.id}`).then(({ statusText }) =>
 			console.log(statusText)
 		);
-		dispatch(deleteMovie(movie.id));
+		dispatch(removeMovie(movie.id));
 	}
 
 	function onToggle(e){
 		e.stopPropagation();
 		api.put(`/${movie.id}`, movie)
-			.then(({ data }) => dispatch(toggleMovie(data.id)))
+			.then(({ data }) => dispatch(changeMovie(data.id)))
 			.catch(({ status }) => console.log(status));
 	}
 	return (

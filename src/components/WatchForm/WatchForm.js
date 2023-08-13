@@ -1,7 +1,7 @@
 import React,  { useState} from 'react';
 import { useDispatch } from 'react-redux'
 
-import { addMovie } from '../../store/actions/actions';
+import { createMovie } from '../../store/slices/toWatchSlice';
 import api from '../../api/movie-service';
 
 // import PropTypes from 'prop-types';
@@ -28,7 +28,7 @@ function WatchForm() {
 			isDone: false
 		}
 		api.post('/', movie)
-			.then(({ data }) => dispatch(addMovie(data)))
+			.then(({ data }) => dispatch(createMovie(data)))
 			.catch(({ status }) => console.log(status));
 			setTitle('');
 			setDirector('');

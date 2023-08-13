@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 // import PropTypes from 'prop-types';
 
 import api from '../../api/movie-service';
-import { getMovies } from '../../store/actions/actions';
+// import { getMovies } from '../../store/actions/actions';
 import WatchItem from '../WatchItem/WatchItem';
 
 
@@ -16,11 +16,11 @@ function WatchList() {
 	// console.log(contacts);
 
 
-	useEffect(() => {
+	/* useEffect(() => {
 		api.get('/')
 			.then(({ data }) => dispatch(getMovies(data)))
 			.catch(({ status }) => console.log(status));
-	}, [dispatch]);
+	}, [dispatch]); */
 	
 	return (
 		<div>
